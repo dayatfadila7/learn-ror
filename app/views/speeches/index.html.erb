@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- Outer Row -->
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body">
+          <h3>Speeches</h3>
+          <p style="color: green"><%= notice %></p>
+          <div id="speeches">
+            <%= link_to "New speech", new_speech_path %>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">President Name</th>
+                  <th scope="col">Country Age</th>
+                  <th scope="col">Tagline</th>
+                  <th scope="col">#</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @speeches.each do |speech| %>
+                  <tr>
+                    <td><%= speech.president_name %></td>
+                    <td><%= speech.country_age %></td>
+                    <td><%= speech.tagline %></td>
+                    <td>
+                    <%= link_to "Detail", speech %>
+                    
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

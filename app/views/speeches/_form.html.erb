@@ -1,0 +1,32 @@
+<%= form_with(model: speech) do |form| %>
+  <% if speech.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(speech.errors.count, "error") %> prohibited this speech from being saved:</h2>
+      <ul>
+        <% speech.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :president_name, style: "display: block" %>
+    <%= form.text_field :president_name, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :country_age, style: "display: block" %>
+    <%= form.number_field :country_age, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :tagline, style: "display: block" %>
+    <%= form.text_field :tagline ,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content, id:"summernote", class:"form-control" %>
+  </div>
+  <div class="form-group mt-3">
+    <%= link_to "Back to speeches", speeches_path , class:"btn btn-info" %>
+    <%= form.submit :Save, class: 'btn btn-success' %>
+  </div>
+<% end %>

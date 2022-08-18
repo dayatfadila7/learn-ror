@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  president_name: MyString
+  country_age: 1
+  tagline: MyString
+  content: MyText
+
+two:
+  president_name: MyString
+  country_age: 1
+  tagline: MyString
+  content: MyText

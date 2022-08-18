@@ -1,0 +1,37 @@
+<div class="container">
+  <!-- Outer Row -->
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body">
+          <h3> Detail</h3>
+          <div>
+            <%= link_to "Back to speeches", speeches_path, class:"btn btn-info" %>
+            <%= link_to "Edit this speech", edit_speech_path(@speech), class:"btn btn-warning"  %>
+            <%= button_to "Destroy this speech", @speech,  method: :delete ,class:"btn btn-danger" %>
+          </div>
+          <p style="color: green"><%= notice %></p>
+          <% #render @speech %>
+          <table class="table table-striped">
+            <tr>
+              <td>President name</td>
+              <td><%= @speech.president_name %></td>
+            </tr>
+            <tr>
+              <td>Country Age</td>
+              <td><%= @speech.country_age %></td>
+            </tr>
+            <tr>
+              <td>Tagline</td>
+              <td><%= @speech.tagline %></td>
+            </tr>
+            <tr>
+              <td>Content</td>
+              <td><%= @speech.content %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
