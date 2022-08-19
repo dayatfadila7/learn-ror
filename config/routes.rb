@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :speeches
   get '/' => 'static_page#index'
   
   devise_scope :users do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
   put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
-  resources :speeches
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

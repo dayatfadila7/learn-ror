@@ -24,8 +24,10 @@
                     <td><%= speech.country_age %></td>
                     <td><%= speech.tagline %></td>
                     <td>
-                    <%= link_to "Detail", speech %>
-                    
+                      <%= link_to "Detail", speech %>
+                      <%= link_to "Edit", edit_speech_path(speech) %>
+                      <%= link_to "Delete", speech, method: :delete, class: "button",
+                     data: { turbo_method: :delete, turbo_confirm: "Are You sure delete this data?" } %>
                     </td>
                   </tr>
                 <% end %>

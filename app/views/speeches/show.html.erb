@@ -4,30 +4,38 @@
     <div class="col-lg-8">
       <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body">
-          <h3> Detail</h3>
-          <div>
-            <%= link_to "Back to speeches", speeches_path, class:"btn btn-info" %>
-            <%= link_to "Edit this speech", edit_speech_path(@speech), class:"btn btn-warning"  %>
-            <%= button_to "Destroy this speech", @speech,  method: :delete ,class:"btn btn-danger" %>
-          </div>
+          <h3> Detail Page
+            <div class="float-end">
+              <div class="d-grid gap-2 d-md-flex" >
+                <%= link_to "Speeches list", speeches_path, class:"btn btn-info" %>
+                <%= link_to "Edit", edit_speech_path(@speech), class:"btn btn-warning" %>
+                <%= link_to "Delete", @speech, method: :delete, class: "btn btn-danger",
+                     data: { turbo_method: :delete, turbo_confirm: "Are You sure delete this data?" } %>
+              </div>
+            </div>
+          </h3>
           <p style="color: green"><%= notice %></p>
           <% #render @speech %>
-          <table class="table table-striped">
+          <table class="table table-striped mt-5">
             <tr>
-              <td>President name</td>
+              <th>Logo</th>
+              <td><%= @speech.logo %></td>
+            </tr>
+            <tr>
+              <th>President name</th>
               <td><%= @speech.president_name %></td>
             </tr>
             <tr>
-              <td>Country Age</td>
+              <th>Country Age</th>
               <td><%= @speech.country_age %></td>
             </tr>
             <tr>
-              <td>Tagline</td>
+              <th>Tagline</th>
               <td><%= @speech.tagline %></td>
             </tr>
             <tr>
-              <td>Content</td>
-              <td><%= @speech.content %></td>
+              <th>Content</th>
+              <td><%= raw @speech.content %></td>
             </tr>
           </table>
         </div>

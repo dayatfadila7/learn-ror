@@ -39,7 +39,7 @@ class SpeechesController < ApplicationController
   def update
     respond_to do |format|
       if @speech.update(speech_params)
-        format.html { redirect_to speech_url(@speech), notice: "Speech was successfully updated." }
+        format.html { redirect_to speech_url, notice: "Speech was successfully updated." }
         format.json { render :show, status: :ok, location: @speech }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,10 +50,12 @@ class SpeechesController < ApplicationController
 
   # DELETE /speeches/1 or /speeches/1.json
   def destroy
+
+    @speech = Speech.find(params[:id])
     @speech.destroy
 
     respond_to do |format|
-      format.html { redirect_to speeches_url, notice: "Speech was successfully destroyed." }
+      format.html { redirect_to speeches_url, status: :see_other, notice: "Speech was successfully destroyed." }
       format.json { head :no_content }
     end
   end

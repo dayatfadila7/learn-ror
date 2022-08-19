@@ -23,6 +23,9 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav ">
             <% if user_signed_in? %>
+             <li>
+                <a class="nav-link active" aria-current="page" href="/speeches">List Archive</a>
+              </li>
               <li><span class="text-white p-3"> Hi, <%= current_user.email  %> </span> </li>
               <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete , class:"btn btn-danger btn-sm" %></li>
             <% else %>
