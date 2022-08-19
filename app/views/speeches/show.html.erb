@@ -16,12 +16,14 @@
           </h3>
           <p style="color: green"><%= notice %></p>
           <% #render @speech %>
-          <table class="table table-image table-striped mt-5">
+          <table class="table table-image table-bordered mt-5">
             <tr>
               <th width="15%">Logo</th>
               <td class="w-25">
                 <% if @speech.logo? %>
                   <%= image_tag @speech.logo.url , class:"img-fluid img-thumbnail" %>
+                <% else %>
+                  <%= image_tag("https://polteksahid.ac.id/wp-content/uploads/2021/12/placeholder.png", {:style => "width:25%;"}) %>
                 <%end%>
               </td>
             </tr>
