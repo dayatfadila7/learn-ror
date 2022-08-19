@@ -16,10 +16,14 @@
           </h3>
           <p style="color: green"><%= notice %></p>
           <% #render @speech %>
-          <table class="table table-striped mt-5">
+          <table class="table table-image table-striped mt-5">
             <tr>
-              <th>Logo</th>
-              <td><%= @speech.logo %></td>
+              <th width="15%">Logo</th>
+              <td class="w-25">
+                <% if @speech.logo? %>
+                  <%= image_tag @speech.logo.url , class:"img-fluid img-thumbnail" %>
+                <%end%>
+              </td>
             </tr>
             <tr>
               <th>President name</th>
@@ -34,8 +38,12 @@
               <td><%= @speech.tagline %></td>
             </tr>
             <tr>
-              <th>Content</th>
-              <td><%= raw @speech.content %></td>
+              <th colspan="2">Content</th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <%= raw @speech.content %>
+              </td>
             </tr>
           </table>
         </div>

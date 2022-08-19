@@ -3,4 +3,7 @@ class Speech < ApplicationRecord
     validates :country_age, presence: true
     validates :tagline, presence: true
     validates :content, presence: true
+
+    mount_uploader :logo, LogoUploader
+    
 end

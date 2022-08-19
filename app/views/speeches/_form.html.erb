@@ -1,4 +1,4 @@
-<%= form_with(model: speech) do |form| %>
+<%= form_with(model: speech, multipart: true) do |form| %>
   <% if speech.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(speech.errors.count, "error") %> prohibited this speech from being saved:</h2>
@@ -20,6 +20,20 @@
   <div class="form-group">
     <%= form.label :tagline, style: "display: block" %>
     <%= form.text_field :tagline ,class:"form-control" %>
+  </div>
+  <div>
+    <% if @new_record == false   %>
+      <label style="display: block">existing image</label>
+      <% if @speech.logo? %>
+        <%= image_tag @speech.logo.url , class:"img-fluid img-thumbnail", style:"width:25%"%>
+      <% else %>
+        <%= image_tag("https://img.freepik.com/free-photo/wake-speedboat-ocean_1385-1745.jpg", {:style => "width:25%;"}) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= form.label :logo, style: "display: block" %>
+    <%= form.file_field :logo, accept: 'image/png, image/jpg' %>
   </div>
   <div class="form-group">
     <%= form.label :content, style: "display: block" %>

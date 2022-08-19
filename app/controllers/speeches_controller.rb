@@ -14,10 +14,13 @@ class SpeechesController < ApplicationController
   # GET /speeches/new
   def new
     @speech = Speech.new
+    @new_record = true
   end
 
   # GET /speeches/1/edit
   def edit
+    @speech = Speech.find(params[:id])
+    @new_record = false
   end
 
   # POST /speeches or /speeches.json
@@ -25,6 +28,7 @@ class SpeechesController < ApplicationController
     @speech = Speech.new(speech_params)
 
     respond_to do |format|
+      
       if @speech.save
         format.html { redirect_to speech_url(@speech), notice: "Speech was successfully created." }
         format.json { render :show, status: :created, location: @speech }
@@ -68,6 +72,6 @@ class SpeechesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def speech_params
-      params.require(:speech).permit(:president_name, :country_age, :tagline, :content)
+      params.require(:speech).permit(:president_name, :country_age, :tagline, :content, :logo)
     end
 end
