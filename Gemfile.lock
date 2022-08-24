@@ -66,8 +66,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
@@ -105,6 +105,10 @@ GEM
       responders
       warden (~> 1.2.3)
     digest (3.1.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.11.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -133,8 +137,7 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
-    msgpack (1.5.4)
-    mysql2 (0.5.4)
+    msgpack (1.5.6)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -153,8 +156,9 @@ GEM
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    public_suffix (4.0.7)
-    puma (5.6.4)
+    pg (1.4.3)
+    public_suffix (5.0.0)
+    puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
@@ -258,9 +262,10 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.8)
+  dotenv-rails
   jbuilder
   jsbundling-rails
-  mysql2 (~> 0.5)
+  pg (~> 1.4.3)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   sassc-rails
