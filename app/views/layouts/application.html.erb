@@ -23,17 +23,36 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav ">
             <% if user_signed_in? %>
-             <li>
+              <li>
                 <a class="nav-link active" aria-current="page" href="/speeches">List Archive</a>
               </li>
               <li><span class="text-white p-3"> Hi, <%= current_user.email  %> </span> </li>
               <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete , class:"btn btn-danger btn-sm" %></li>
             <% else %>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Tentang Kami</a>
-              </li>
-              <li>
-                <a class="nav-link active" aria-current="page" href="#">Kontak Kami</a>
+                <a class="nav-link active" aria-current="page" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aboutModal">About application</a>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About application</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>this application for final task prograte ruby on rails</p>
+                        <p>for login to application you can access https://prograte-task.herokuapp.com/users/sign_in</p>
+                        <p>with credential :</p>
+                        <p> username : user@name.com</p>
+                        <p> password : password</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </li>
             <% end %>
           </ul>
