@@ -18,9 +18,9 @@ test:
 
 production:
   adapter: postgresql
-  host: localhost
+  host: ec2-44-210-36-247.compute-1.amazonaws.com
   encoding: unicode
-  database: homework_production
+  database: ec2-44-210-36-247.compute-1.amazonaws.com
   pool: 5
-  username: <%= ENV["HOMEWORK_DATABASE_USERNAME"] %>
-  password: <%= ENV["HOMEWORK_DATABASE_PASSWORD"] %>
+  username: eftqhpfdulwcgg
+  password: 247e531d8287b955ada7cfb44c6dbff2380143510cbaed6c43e3b10ea982d90e
